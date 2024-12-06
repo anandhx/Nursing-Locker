@@ -1,63 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Best BSc Notes and Study Materials - Nursing Locker</title>
+    <meta name="description" content="Find the best BSc notes, previous year question papers, and study materials for Nursing students. Your ultimate resource for academic success.">
+    <meta name="keywords" content="BSc notes, Nursing notes, BSc Nursing study materials, previous year question papers, BSc syllabus, Nursing Locker">
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Best BSc Notes and Study Materials - Nursing Locker">
+    <meta property="og:description" content="Your one-stop destination for BSc notes, Nursing study materials, and question papers. Learn, prepare, and succeed.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="og:url" content="https://anandhx.github.io/Nursing-Locker/">
+    <meta property="og:type" content="website">
+  
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best BSc Notes and Study Materials - Nursing Locker">
+    <meta name="twitter:description" content="Access BSc Nursing notes, question papers, and more to excel in your studies.">
+    <meta name="twitter:image" content="assets/img/og-image.jpg">
+    <meta name="twitter:site" content="@yourTwitterHandle">
+  
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Nursing Locker",
+      "url": "https://anandhx.github.io/Nursing-Locker/",
+      "logo": "https://anandhx.github.io/Nursing-Locker/assets/img/logo.png",
+      "description": "Providing BSc Nursing notes, study materials, and previous year question papers for students.",
+      "sameAs": [
+        "https://facebook.com/nursinglocker",
+        "https://twitter.com/nursinglocker",
+        "https://instagram.com/nursinglocker",
+        "https://linkedin.com/company/nursinglocker"
+      ]
+    }
+    </script>
+  
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+      .scroll-down-link {
+        animation: bounce 2s infinite;
+      }
+      
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - HeroBiz Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+      .team-member {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the content */
+        justify-content: center;
+      }
+      
+      .team-member:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .member-img img {
+        transition: transform 0.3s ease;
+      }
+      
+      .team-member:hover .member-img img {
+        transform: scale(1.1);
+      }
+      
+      .social a {
+        transition: transform 0.3s ease;
+      }
+      
+      .social a:hover {
+        transform: scale(1.2);
+      }
+      
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      #header {
+        background-color: #f8f9fa; /* Light background */
+        padding: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .sitename {
+        font-size: 2rem; /* Bigger size for logo text */
+        color: #007bff; /* Primary blue color */
+      }
+      
+      .navmenu ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+      }
+      
+      .navmenu ul li a {
+        color: #343a40; /* Dark text color */
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+      
+      .navmenu ul li a:hover {
+        color: #007bff; /* Change color on hover */
+      }
+      
+      .navmenu ul li a i {
+        margin-right: 8px; /* Space between icon and text */
+      }
+      
+      .mobile-nav-toggle {
+        display: none;
+      }
+      
+      /* Responsive styles */
+      @media (max-width: 992px) {
+        .mobile-nav-toggle {
+          display: block;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+      
+        .navmenu ul {
+          display: none;
+          flex-direction: column;
+        }
+      
+        .navmenu.active ul {
+          display: flex;
+        }
+      }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+      
+      
+      
+    </style>
+  </head>
+  
 
-  <!-- =======================================================
-  * Template Name: HeroBiz
-  * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+
+
+
+
 
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
   
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Nursing Locker</h1>
+       <!-- Logo Section -->
+       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Nursing Locker Logo with Icon -->
+        <i class="bi bi-heart-pulse text-primary fs-1 me-2"></i> <!-- Heart Pulse Icon -->
+        <h1 class="sitename  "> Nursing Locker</h1>
       </a>
   
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="courses.html">Courses</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          
+          <li><a href="contactme.html">Contact</a></li>
+          <li><a href="contact.html">Contribute Your Notes</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
   
-      <a class="btn-getstarted" href="resources.html">Explore Resources</a>
+      
   
     </div>
   </header>
@@ -75,13 +217,22 @@
     <h1>Welcome to <span>Nursing Locker</span></h1>
     <p>Your one-stop destination for BSc Nursing question papers and study notes.</p>
     <div class="d-flex">
-      <a href="#resources" class="btn-get-started scrollto">Explore Resources</a>
-      <a href="https://www.youtube.com/watch?v=nursing-guide" class="glightbox btn-watch-video d-flex align-items-center">
-        <i class="bi bi-play-circle"></i><span>Learn More</span>
+      <a href="contact.html" class="btn-get-started scrollto">Contribute Your Notes and Resources</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="d-flex">
+      <!-- Scroll Down Effect -->
+       
+      <a href="#next-section" class="scroll-down-link text-decoration-none d-flex flex-column align-items-center">
+        <i class="bi bi-chevron-double-down display-4 text-primary"></i>
+        <span class="mt-2 text-primary">Scroll Down</span>
       </a>
     </div>
   </div>
-
+  
 </section>
 <!-- /Hero Section -->
 
@@ -97,7 +248,7 @@
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-file-earmark-text icon"></i></div>
-          <h4><a href="#resources" class="stretched-link">Question Papers</a></h4>
+          <h4><a href="questionpaper.html" class="stretched-link">Question Papers</a></h4>
           <p>Access previous year question papers organized by semester and subject.</p>
         </div>
       </div><!-- End Service Item -->
@@ -105,23 +256,25 @@
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-journal-bookmark icon"></i></div>
-          <h4><a href="#notes" class="stretched-link">Study Notes</a></h4>
+          <h4><a href="studynotes.html" class="stretched-link">Study Notes</a></h4>
           <p>Download concise and reliable study notes to prepare effectively for exams.</p>
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-search icon"></i></div>
-          <h4><a href="#search" class="stretched-link">Search Resources</a></h4>
-          <p>Quickly find the exact resources you need using our search and filter tools.</p>
-        </div>
-      </div><!-- End Service Item -->
+
+   
 
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-envelope icon"></i></div>
-          <h4><a href="#contact" class="stretched-link">Feedback & Suggestions</a></h4>
+          <h4><a href="syllabus.html" class="stretched-link">Syllabus Download</a></h4>
+          <p>Access the detailed syllabus  to better understand the topics and prepare effectively for your exams</p>
+        </div>
+      </div><!-- End Service Item -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-envelope icon"></i></div>
+          <h4><a href="contactme.html" class="stretched-link">Feedback & Suggestions</a></h4>
           <p>Help us improve by providing feedback or requesting additional resources.</p>
         </div>
       </div><!-- End Service Item -->
@@ -150,12 +303,12 @@
       <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
         <h3>Get Access to Essential <em>Study Resources</em></h3>
         <p>Explore a wide range of previous year question papers and study notes for BSc Nursing. Stay ahead in your exams with the right tools and resources.</p>
-        <a class="cta-btn align-self-start" href="resources.html">Explore Resources</a>
+        <a class="cta-btn align-self-start" href="studynotes.html">Explore Resources</a>
       </div>
 
       <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
         <div class="img">
-          <img src="assets/img/nursing-resources.jpg" alt="Study Resources" class="img-fluid">
+      <!--     <img src="assets/img/studyresources.png" alt="Study Resources" class="img-fluid">  -->
         </div>
       </div>
 
@@ -173,9 +326,7 @@
   <div class="container-fluid p-0" data-aos="fade-up">
 
     <div class="row g-0">
-      <div class="col-lg-6 video-play position-relative">
-        <a href="https://www.youtube.com/watch?v=nursing-resources-video" class="glightbox pulsating-play-btn"></a>
-      </div>
+     
       <div class="col-lg-6">
         <div class="content d-flex flex-column justify-content-center h-100">
           <h3>Access the Best Study Resources for BSc Nursing</h3>
@@ -187,7 +338,7 @@
             <li><i class="bi bi-check-circle"></i> Access high-quality study notes to understand key concepts.</li>
             <li><i class="bi bi-check-circle"></i> Watch informative videos to guide your exam preparation and studies.</li>
           </ul>
-          <a href="resources.html" class="read-more align-self-start"><span>Explore Resources</span><i class="bi bi-arrow-right"></i></a>
+          <a href="studynotes.html" class="read-more align-self-start"><span>Explore Resources</span><i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -199,6 +350,11 @@
 
 <!-- Features Section -->
 <section id="features" class="features section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Some Common Notes</h2>
+      <p>Providing BSc Nursing students with essential resources for effective study and exam preparation.</p>
+    </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade-up">
 
@@ -321,158 +477,6 @@
   </div>
 
 </section><!-- /Features Section -->
-
-
-<!-- Services Section -->
-<section id="services" class="services section">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Our Services</h2>
-    <p>Providing BSc Nursing students with essential resources for effective study and exam preparation.</p>
-  </div><!-- End Section Title -->
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="row gy-5">
-
-      <!-- Anatomy Service -->
-      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-        <div class="service-item">
-          <div class="img">
-            <img src="assets/img/services-1.jpg" class="img-fluid" alt="Anatomy">
-          </div>
-          <div class="details position-relative">
-            <div class="icon">
-              <i class="bi bi-file-earmark-text"></i>
-            </div>
-            <a href="service-details.html" class="stretched-link">
-              <h3>Anatomy</h3>
-            </a>
-            <p>Access notes, syllabus, and study materials for human anatomy.</p>
-            <ul>
-              <li><i class="bi bi-download"></i> <a href="resources/Anatomy/notes.pdf" download>Download Notes</a></li>
-              <li><i class="bi bi-download"></i> <a href="resources/Anatomy/syllabus.pdf" download>Download Syllabus</a></li>
-            </ul>
-          </div>
-        </div>
-      </div><!-- End Service Item -->
-
-      <!-- Physiology Service -->
-      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-        <div class="service-item">
-          <div class="img">
-            <img src="assets/img/services-1.jpg" class="img-fluid" alt="Physiology">
-          </div>
-          <div class="details position-relative">
-            <div class="icon">
-              <i class="bi bi-file-earmark-text"></i>
-            </div>
-            <a href="service-details.html" class="stretched-link">
-              <h3>Physiology</h3>
-            </a>
-            <p>Get detailed study materials for understanding human physiology.</p>
-            <ul>
-              <li><i class="bi bi-download"></i> <a href="resources/Physiology/notes.pdf" download>Download Notes</a></li>
-              <li><i class="bi bi-download"></i> <a href="resources/Physiology/syllabus.pdf" download>Download Syllabus</a></li>
-            </ul>
-          </div>
-        </div>
-      </div><!-- End Service Item -->
-
-      <!-- Pharmacology Service -->
-      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-        <div class="service-item">
-          <div class="img">
-            <img src="assets/img/services-1.jpg" class="img-fluid" alt="Pharmacology">
-          </div>
-          <div class="details position-relative">
-            <div class="icon">
-              <i class="bi bi-file-earmark-text"></i>
-            </div>
-            <a href="service-details.html" class="stretched-link">
-              <h3>Pharmacology</h3>
-            </a>
-            <p>Study materials, notes, and syllabus for pharmacology in BSc Nursing.</p>
-            <ul>
-              <li><i class="bi bi-download"></i> <a href="resources/Pharmacology/notes.pdf" download>Download Notes</a></li>
-              <li><i class="bi bi-download"></i> <a href="resources/Pharmacology/syllabus.pdf" download>Download Syllabus</a></li>
-            </ul>
-          </div>
-        </div>
-      </div><!-- End Service Item -->
-
-      <!-- Microbiology Service -->
-      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
-        <div class="service-item">
-          <div class="img">
-            <img src="assets/img/services-1.jpg" class="img-fluid" alt="Microbiology">
-          </div>
-          <div class="details position-relative">
-            <div class="icon">
-              <i class="bi bi-file-earmark-text"></i>
-            </div>
-            <a href="service-details.html" class="stretched-link">
-              <h3>Microbiology</h3>
-            </a>
-            <p>Explore notes and syllabus to master microbiology for nursing students.</p>
-            <ul>
-              <li><i class="bi bi-download"></i> <a href="resources/Microbiology/notes.pdf" download>Download Notes</a></li>
-              <li><i class="bi bi-download"></i> <a href="resources/Microbiology/syllabus.pdf" download>Download Syllabus</a></li>
-            </ul>
-          </div>
-        </div>
-      </div><!-- End Service Item -->
-
-      <!-- Pathology Service -->
-      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
-        <div class="service-item">
-          <div class="img">
-            <img src="assets/img/services-1.jpg" class="img-fluid" alt="Pathology">
-          </div>
-          <div class="details position-relative">
-            <div class="icon">
-              <i class="bi bi-file-earmark-text"></i>
-            </div>
-            <a href="service-details.html" class="stretched-link">
-              <h3>Pathology</h3>
-            </a>
-            <p>Download notes and syllabus for pathology to support your nursing studies.</p>
-            <ul>
-              <li><i class="bi bi-download"></i> <a href="resources/Pathology/notes.pdf" download>Download Notes</a></li>
-              <li><i class="bi bi-download"></i> <a href="resources/Pathology/syllabus.pdf" download>Download Syllabus</a></li>
-            </ul>
-          </div>
-        </div>
-      </div><!-- End Service Item -->
-
-      <!-- Biochemistry Service -->
-      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
-        <div class="service-item">
-          <div class="img">
-            <img src="assets/img/services-1.jpg" class="img-fluid" alt="Biochemistry">
-          </div>
-          <div class="details position-relative">
-            <div class="icon">
-              <i class="bi bi-file-earmark-text"></i>
-            </div>
-            <a href="service-details.html" class="stretched-link">
-              <h3>Biochemistry</h3>
-            </a>
-            <p>Access study materials and syllabus for biochemistry in the nursing program.</p>
-            <ul>
-              <li><i class="bi bi-download"></i> <a href="resources/Biochemistry/notes.pdf" download>Download Notes</a></li>
-              <li><i class="bi bi-download"></i> <a href="resources/Biochemistry/syllabus.pdf" download>Download Syllabus</a></li>
-            </ul>
-          </div>
-        </div>
-      </div><!-- End Service Item -->
-
-    </div>
-
-  </div>
-
-</section><!-- /Services Section -->
 
 
 
@@ -686,419 +690,47 @@
 
 
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container-fluid">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Product</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Books</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row g-0 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-1.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-1.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/books-1.jpg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-2.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-2.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/books-2.jpg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/app-3.jpg" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/product-3.jpg" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/branding-3.jpg" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <a href="assets/img/portfolio/books-3.jpg" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-
-
-<!-- Team Section -->
 <section id="team" class="team section">
-
   <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
+  <div class="container section-title text-center" data-aos="fade-up">
     <h2>Meet Our Team</h2>
     <p>Our dedicated team is here to provide the best study resources and support for BSc Nursing students.</p>
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="row gy-5">
+    <div class="row gy-5 justify-content-center">
 
       <!-- Team Member 1 -->
-      <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
-        <div class="team-member">
-          <div class="member-img">
-            <img src="assets/img/team/member-1.jpg" class="img-fluid" alt="Team Member 1">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-12 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
+        <div class="team-member text-center position-relative">
+          <!-- Member Image -->
+          <div class="member-img mb-4">
+            <img src="assets/img/team/member-1.jpg" class="img-fluid rounded-circle" alt="Anandhu Ashok">
           </div>
+          <!-- Member Info -->
           <div class="member-info">
-            <div class="social">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
             <h4>Anandhu Ashok</h4>
-            <span>Founder & Backend Developer</span>
+            <span>Founder & Developer</span>
+            <!-- Social Media Links -->
+            <div class="social mt-3">
+              <a href="" class="btn btn-outline-dark mx-1"><i class="bi bi-twitter"></i></a>
+              <a href="" class="btn btn-outline-dark mx-1"><i class="bi bi-facebook"></i></a>
+              <a href="" class="btn btn-outline-dark mx-1"><i class="bi bi-instagram"></i></a>
+              <a href="" class="btn btn-outline-dark mx-1"><i class="bi bi-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div><!-- End Team Member -->
 
-      <!-- Team Member 2 -->
-      <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
-        <div class="team-member">
-          <div class="member-img">
-            <img src="assets/img/team/member-2.jpg" class="img-fluid" alt="Team Member 2">
-          </div>
-          <div class="member-info">
-            <div class="social">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
-            <h4>Sarah Jhonson</h4>
-            <span>Content Manager</span>
-          </div>
-        </div>
-      </div><!-- End Team Member -->
-
-      <!-- Team Member 3 -->
-      <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
-        <div class="team-member">
-          <div class="member-img">
-            <img src="assets/img/team/member-3.jpg" class="img-fluid" alt="Team Member 3">
-          </div>
-          <div class="member-info">
-            <div class="social">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
-            <h4>William Anderson</h4>
-            <span>Chief Technical Officer (CTO)</span>
-          </div>
-        </div>
-      </div><!-- End Team Member -->
+      <!-- Add More Team Members Here -->
 
     </div>
-
   </div>
-
 </section><!-- /Team Section -->
 
-<!-- Recent Posts Section -->
-<section id="recent-posts" class="recent-posts section">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Recent Updates</h2>
-    <p>Stay updated with the latest study tips, exam resources, and useful content for BSc Nursing students.</p>
-  </div><!-- End Section Title -->
-
-  <div class="container">
-
-    <div class="row gy-4">
-
-      <!-- Post 1: Study Tips -->
-      <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-        <article>
-
-          <div class="post-img">
-            <img src="assets/img/blog/study-tips.jpg" alt="Study Tips" class="img-fluid">
-          </div>
-
-          <p class="post-category">Study Tips</p>
-
-          <h2 class="title">
-            <a href="post-details.html">5 Effective Study Tips for BSc Nursing Students</a>
-          </h2>
-
-          <div class="d-flex align-items-center">
-            <img src="assets/img/blog/blog-author.jpg" alt="Author" class="img-fluid post-author-img flex-shrink-0">
-            <div class="post-meta">
-              <p class="post-author">Anandhu Ashok</p>
-              <p class="post-date">
-                <time datetime="2024-01-01">Jan 1, 2024</time>
-              </p>
-            </div>
-          </div>
-
-        </article>
-      </div><!-- End post list item -->
-
-      <!-- Post 2: Resources Update -->
-      <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-        <article>
-
-          <div class="post-img">
-            <img src="assets/img/blog/resources-update.jpg" alt="Resources Update" class="img-fluid">
-          </div>
-
-          <p class="post-category">Resources</p>
-
-          <h2 class="title">
-            <a href="post-details.html">New Study Materials Added for Anatomy and Physiology</a>
-          </h2>
-
-          <div class="d-flex align-items-center">
-            <img src="assets/img/blog/blog-author-2.jpg" alt="Author" class="img-fluid post-author-img flex-shrink-0">
-            <div class="post-meta">
-              <p class="post-author">Sarah Jhonson</p>
-              <p class="post-date">
-                <time datetime="2024-02-15">Feb 15, 2024</time>
-              </p>
-            </div>
-          </div>
-
-        </article>
-      </div><!-- End post list item -->
-
-      <!-- Post 3: Exam Preparation -->
-      <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <article>
-
-          <div class="post-img">
-            <img src="assets/img/blog/exam-prep.jpg" alt="Exam Preparation" class="img-fluid">
-          </div>
-
-          <p class="post-category">Exam Preparation</p>
-
-          <h2 class="title">
-            <a href="post-details.html">How to Prepare for Your BSc Nursing Exams Effectively</a>
-          </h2>
-
-          <div class="d-flex align-items-center">
-            <img src="assets/img/blog/blog-author-3.jpg" alt="Author" class="img-fluid post-author-img flex-shrink-0">
-            <div class="post-meta">
-              <p class="post-author">William Anderson</p>
-              <p class="post-date">
-                <time datetime="2024-03-10">Mar 10, 2024</time>
-              </p>
-            </div>
-          </div>
-
-        </article>
-      </div><!-- End post list item -->
-
-    </div><!-- End recent posts list -->
-
-  </div>
-
-</section><!-- /Recent Posts Section -->
 
 
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="mb-5">
-        <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen=""></iframe>
-      </div><!-- End Google Maps -->
-
-      <div class="container" data-aos="fade">
-
-        <div class="row gy-5 gx-lg-5">
-
-          <div class="col-lg-4">
-
-            <div class="info">
-              <h3>Get in touch</h3>
-              <p>Et id eius voluptates atque nihil voluptatem enim in tempore minima sit ad mollitia commodi minus.</p>
-
-              <div class="info-item d-flex">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h4>Email:</h4>
-                  <p>info@example.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4>Call:</h4>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div><!-- End Info Item -->
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" placeholder="Message" required=""></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
 
   </main>
 
@@ -1113,9 +745,8 @@
             <span class="sitename">Nursing Locker</span>
           </a>
           <div class="footer-contact pt-3">
-            <p><strong>Address:</strong> A108 Adam Street, New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@nursinghelper.com</span></p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+91 7592046959</span></p>
+            <p><strong>Email:</strong> <span>anandhuashok6959@gmail.com</span></p>
           </div>
         </div>
 
@@ -1123,21 +754,18 @@
           <h4>Useful Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contactme.html">Contact</a></li>
+          <li><a href="contact.html">Contribute Your Notes</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="resources.html">Study Materials</a></li>
-            <li><a href="resources.html">Previous Year Question Papers</a></li>
-            <li><a href="resources.html">Syllabus Downloads</a></li>
-            <li><a href="contact.html">Personalized Study Help</a></li>
-            <li><a href="blog.html">Exam Preparation Tips</a></li>
+            <li><a href="studynotes.html">Study Materials</a></li>
+            <li><a href="questionpaper.html">Previous Year Question Papers</a></li>
+            <li><a href="syllabus.html">Syllabus Downloads</a></li>
+            <li><a href="examtips.html">Exam Preparation Tips</a></li>
           </ul>
         </div>
 
@@ -1145,20 +773,14 @@
           <h4>Additional Information</h4>
           <ul>
             <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="contact.html">Support</a></li>
-            <li><a href="about.html">About the Team</a></li>
-            <li><a href="blog.html">Latest Updates</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Follow Us</h4>
           <ul>
-            <li><a href="https://twitter.com/nursinghelper" target="_blank">Twitter</a></li>
-            <li><a href="https://facebook.com/nursinghelper" target="_blank">Facebook</a></li>
-            <li><a href="https://instagram.com/nursinghelper" target="_blank">Instagram</a></li>
-            <li><a href="https://linkedin.com/company/nursinghelper" target="_blank">LinkedIn</a></li>
+            <li><a href="https://instagram.com/mind________freezer" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/anandhu-ashok/" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
 
@@ -1174,21 +796,29 @@
           © Copyright <strong><span>Nursing Locker</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          Designed by <a href="https://yourwebsite.com">Your Company</a> | Powered by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Developed by <a href="https://anandhx.github.io/" target="_blank">Anandhu</a> | 
+          <a href="https://anandhx.github.io/" target="_blank">BridgexHub</a>
         </div>
+        
       </div>
 
       <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-        <a href="https://twitter.com/nursinghelper" target="_blank"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://facebook.com/nursinghelper" target="_blank"><i class="bi bi-facebook"></i></a>
-        <a href="https://instagram.com/nursinghelper" target="_blank"><i class="bi bi-instagram"></i></a>
-        <a href="https://linkedin.com/company/nursinghelper" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://instagram.com/mind________freezer" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/anandhu-ashok/" target="_blank"><i class="bi bi-linkedin"></i></a>
       </div>
 
     </div>
   </div>
 
 </footer><!-- /Footer Section -->
+
+
+
+
+
+
+
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
