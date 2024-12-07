@@ -10,15 +10,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Best BSc Notes and Study Materials - Nursing Locker">
     <meta property="og:description" content="Your one-stop destination for BSc notes, Nursing study materials, and question papers. Learn, prepare, and succeed.">
-    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="og:image" content="assets/img/nurse1.jpg">
     <meta property="og:url" content="https://anandhx.github.io/Nursing-Locker/">
     <meta property="og:type" content="website">
   
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Best BSc Notes and Study Materials - Nursing Locker">
+    <meta name="twitter:title" content="BSc Notes and Study Materials - Nursing Locker">
     <meta name="twitter:description" content="Access BSc Nursing notes, question papers, and more to excel in your studies.">
-    <meta name="twitter:image" content="assets/img/og-image.jpg">
+    <meta name="twitter:image" content="assets/img/nurse1.jpg">
     <meta name="twitter:site" content="@yourTwitterHandle">
   
     <!-- Structured Data -->
@@ -28,7 +28,7 @@
       "@type": "EducationalOrganization",
       "name": "Nursing Locker",
       "url": "https://anandhx.github.io/Nursing-Locker/",
-      "logo": "https://anandhx.github.io/Nursing-Locker/assets/img/logo.png",
+      "logo": "https://anandhx.github.io/Nursing-Locker/assets/img/nurse1.jpg",
       "description": "Providing BSc Nursing notes, study materials, and previous year question papers for students.",
       "sameAs": [
         "https://facebook.com/nursinglocker",
@@ -40,8 +40,8 @@
     </script>
   
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/nurse1.jpg" rel="icon">
+    <link href="assets/img/nurse1.jpg" rel="apple-touch-icon">
   
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -165,7 +165,37 @@
 
 
 
-      
+      /* Coming Soon Message Styles */
+.coming-soon-message {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: none; /* Hidden by default */
+    pointer-events: none; /* Disable clicking on the message */
+}
+
+/* Show the message on hover */
+.service-item:hover .coming-soon-message {
+    display: inline-block; /* Display the message when hovering */
+}
+
+/* Optionally add some smooth transition */
+.coming-soon-message {
+    transition: opacity 0.3s ease;
+}
+
+/* Prevent interaction with the text */
+.non-clickable {
+    pointer-events: none; /* Disable interaction (clicks, hovers, etc.) on this text */
+}
+
       
       
     </style>
@@ -194,11 +224,13 @@
           <li><a href="index.html" class="active">Home</a></li>
           
           <li><a href="contactme.html">Contact</a></li>
-          <li><a href="contact.html">Contribute Your Notes</a></li>
+               <li><a href="contact.html">Contribute Your Notes</a></li>
+          <li><a href="resources.html">Search Resources</a></li>
+        <li>
         </ul>
        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="resources.html">Notes</a>
+      <a class="btn-getstarted" href="studynotes.html">Notes</a>
       
   
     </div>
@@ -214,7 +246,7 @@
 
   <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
     <img src="assets/img/nurse1.jpg" class="img-fluid animated" alt="Nursing Locker">
-    <h1>Welcome to <span>Nursing Locker</span></h1>
+    <h1>Welcome to Bsc <span>Nursing Locker</span></h1>
     <p>Your one-stop destination for BSc Nursing question papers and study notes.</p>
     <div class="d-flex">
       <a href="contact.html" class="btn-get-started scrollto">Contribute Your Notes and Resources</a>
@@ -247,11 +279,53 @@
 
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
         <div class="service-item position-relative">
-          <div class="icon"><i class="bi bi-file-earmark-text icon"></i></div>
-          <h4><a href="questionpaper.html" class="stretched-link">Question Papers</a></h4>
-          <p>Access previous year question papers organized by semester and subject.</p>
+            <div class="icon"><i class="bi bi-file-earmark-text icon"></i></div>
+            <h4><span class="non-clickable">Question Papers</span></h4>
+            <p><span class="non-clickable">Access a collection of previous year question papers, neatly organized by semester and subject, to help you prepare effectively for upcoming exams.</span></p>
+            <!-- Feature Coming Soon Message -->
+            <div class="coming-soon-message">
+                <span>We will add this feature soon!</span>
+            </div>
         </div>
-      </div><!-- End Service Item -->
+    </div><!-- End Service Item -->
+    
+    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-file-earmark-text icon"></i></div>
+            <h4><span class="non-clickable">Exam Tips</span></h4>
+            <p><span class="non-clickable">Get valuable exam tips and strategies to help you maximize your performance, with advice on time management, stress reduction, and study techniques.</span></p>
+            <!-- Feature Coming Soon Message -->
+            <div class="coming-soon-message">
+                <span>We will add this feature soon!</span>
+            </div>
+        </div>
+    </div><!-- End Service Item -->
+    
+    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-file-earmark-text icon"></i></div>
+            <h4><span class="non-clickable">2 and 5 Mark Questions</span></h4>
+            <p><span class="non-clickable">Find a collection of 2-mark and 5-mark questions commonly asked in exams, organized by topic to help you focus on key areas for efficient revision.</span></p>
+            <!-- Feature Coming Soon Message -->
+            <div class="coming-soon-message">
+                <span>We will add this feature soon!</span>
+            </div>
+        </div>
+    </div><!-- End Service Item -->
+    
+    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-file-earmark-text icon"></i></div>
+            <h4><span class="non-clickable">Attend the Online Exam</span></h4>
+            <p><span class="non-clickable">Participate in mock online exams designed to simulate real test environments, allowing you to practice under timed conditions and assess your readiness.</span></p>
+            <!-- Feature Coming Soon Message -->
+            <div class="coming-soon-message">
+                <span>We will add this feature soon!</span>
+            </div>
+        </div>
+    </div><!-- End Service Item -->
+    
+  
 
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative">
@@ -270,7 +344,17 @@
           <h4><a href="syllabus.html" class="stretched-link">Syllabus Download</a></h4>
           <p>Access the detailed syllabus  to better understand the topics and prepare effectively for your exams</p>
         </div>
+
       </div><!-- End Service Item -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-archive icon"></i></div> <!-- Changed icon -->
+            <h4><a href="resources.html" class="stretched-link">Search Resources</a></h4>
+            <p>Access a variety of educational resources like notes, assignments, and study materials to enhance your learning.</p> <!-- Updated description -->
+        </div>
+    </div><!-- End Service Item -->
+    
+
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
         <div class="service-item position-relative">
           <div class="icon"><i class="bi bi-envelope icon"></i></div>
@@ -303,7 +387,7 @@
       <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
         <h3>Get Access to Essential <em>Study Resources</em></h3>
         <p>Explore a wide range of previous year question papers and study notes for BSc Nursing. Stay ahead in your exams with the right tools and resources.</p>
-        <a class="cta-btn align-self-start" href="studynotes.html">Explore Resources</a>
+        <a class="cta-btn align-self-start" href="resources.html">Explore Resources</a>
       </div>
 
       <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
@@ -338,7 +422,7 @@
             <li><i class="bi bi-check-circle"></i> Access high-quality study notes to understand key concepts.</li>
             <li><i class="bi bi-check-circle"></i> Watch informative videos to guide your exam preparation and studies.</li>
           </ul>
-          <a href="studynotes.html" class="read-more align-self-start"><span>Explore Resources</span><i class="bi bi-arrow-right"></i></a>
+          <a href="resources.html" class="read-more align-self-start"><span>Explore Resources</span><i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -348,135 +432,6 @@
 </section><!-- /Onfocus Section -->
 
 
-<!-- Features Section -->
-<section id="features" class="features section">
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Some Common Notes</h2>
-      <p>Providing BSc Nursing students with essential resources for effective study and exam preparation.</p>
-    </div><!-- End Section Title -->
-
-  <div class="container" data-aos="fade-up">
-
-    <ul class="nav nav-tabs row gy-4 d-flex">
-
-      <li class="nav-item col-6 col-md-4 col-lg-2">
-        <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
-          <i class="bi bi-file-earmark-text" style="color: #0dcaf0;"></i>
-          <h4>Anatomy</h4>
-        </a>
-      </li><!-- End Tab 1 Nav -->
-
-      <li class="nav-item col-6 col-md-4 col-lg-2">
-        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
-          <i class="bi bi-file-earmark-text" style="color: #6610f2;"></i>
-          <h4>Physiology</h4>
-        </a>
-      </li><!-- End Tab 2 Nav -->
-
-      <li class="nav-item col-6 col-md-4 col-lg-2">
-        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
-          <i class="bi bi-file-earmark-text" style="color: #20c997;"></i>
-          <h4>Pharmacology</h4>
-        </a>
-      </li><!-- End Tab 3 Nav -->
-
-      <li class="nav-item col-6 col-md-4 col-lg-2">
-        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
-          <i class="bi bi-file-earmark-text" style="color: #df1529;"></i>
-          <h4>Microbiology</h4>
-        </a>
-      </li><!-- End Tab 4 Nav -->
-
-      <li class="nav-item col-6 col-md-4 col-lg-2">
-        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-5">
-          <i class="bi bi-file-earmark-text" style="color: #0d6efd;"></i>
-          <h4>Pathology</h4>
-        </a>
-      </li><!-- End Tab 5 Nav -->
-
-      <li class="nav-item col-6 col-md-4 col-lg-2">
-        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-6">
-          <i class="bi bi-file-earmark-text" style="color: #fd7e14;"></i>
-          <h4>Biochemistry</h4>
-        </a>
-      </li><!-- End Tab 6 Nav -->
-
-    </ul>
-
-    <div class="tab-content">
-
-      <!-- Anatomy Tab -->
-      <div class="tab-pane fade active show" id="features-tab-1">
-        <div class="row gy-4">
-          <div class="col-lg-8 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-            <h3>Anatomy</h3>
-            <p class="fst-italic">
-              Study the structure of the human body, including bones, muscles, organs, and tissues.
-            </p>
-            <ul>
-              <li><i class="bi bi-download"></i> <a href="resources/Anatomy/notes.pdf" download>Download Notes</a></li>
-              <li><i class="bi bi-download"></i> <a href="resources/Anatomy/syllabus.pdf" download>Download Syllabus</a></li>
-              <li><i class="bi bi-book"></i> <a href="resources/Anatomy/extra-materials.pdf" download>Additional Study Materials</a></li>
-            </ul>
-            <p>
-              Learn the fundamental concepts of human anatomy to help you understand how the body functions and interacts.
-            </p>
-          </div>
-          <div class="col-lg-4 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/anatomy.jpg" alt="Anatomy" class="img-fluid">
-          </div>
-        </div>
-      </div><!-- End Tab Content 1 -->
-
-      <!-- Physiology Tab -->
-      <div class="tab-pane fade" id="features-tab-2">
-        <div class="row gy-4">
-          <div class="col-lg-8 order-2 order-lg-1">
-            <h3>Physiology</h3>
-            <p>
-              Study the functions and processes of the human body, including the nervous and cardiovascular systems.
-            </p>
-            <ul>
-              <li><i class="bi bi-download"></i> <a href="resources/Physiology/notes.pdf" download>Download Notes</a></li>
-              <li><i class="bi bi-download"></i> <a href="resources/Physiology/syllabus.pdf" download>Download Syllabus</a></li>
-            </ul>
-            <p class="fst-italic">
-              Understand how various systems in the body function and maintain homeostasis.
-            </p>
-          </div>
-          <div class="col-lg-4 order-1 order-lg-2 text-center">
-            <img src="assets/img/physiology.jpg" alt="Physiology" class="img-fluid">
-          </div>
-        </div>
-      </div><!-- End Tab Content 2 -->
-
-      <!-- Pharmacology Tab -->
-      <div class="tab-pane fade" id="features-tab-3">
-        <div class="row gy-4">
-          <div class="col-lg-8 order-2 order-lg-1">
-            <h3>Pharmacology</h3>
-            <p>
-              Study the effects of drugs on the body and the therapeutic uses of medications in patient care.
-            </p>
-            <ul>
-              <li><i class="bi bi-download"></i> <a href="resources/Pharmacology/notes.pdf" download>Download Notes</a></li>
-              <li><i class="bi bi-download"></i> <a href="resources/Pharmacology/syllabus.pdf" download>Download Syllabus</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4 order-1 order-lg-2 text-center">
-            <img src="assets/img/pharmacology.jpg" alt="Pharmacology" class="img-fluid">
-          </div>
-        </div>
-      </div><!-- End Tab Content 3 -->
-
-      <!-- Repeat similar content for other subjects like Microbiology, Pathology, Biochemistry -->
-
-    </div>
-
-  </div>
-
-</section><!-- /Features Section -->
 
 
 
@@ -689,41 +644,35 @@
 
 
 
-
-
 <section id="team" class="team section">
   <!-- Section Title -->
   <div class="container section-title text-center" data-aos="fade-up">
-    <h2>Meet Our Team</h2>
-    <p>Our dedicated team is here to provide the best study resources and support for BSc Nursing students.</p>
+    <h2>About the Developer</h2>
+    <p>Meet the developer behind the project.</p>
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row gy-5 justify-content-center">
 
-      <!-- Team Member 1 -->
+      <!-- Developer Information -->
       <div class="col-xl-3 col-lg-4 col-md-6 col-12 d-flex justify-content-center" data-aos="zoom-in" data-aos-delay="200">
         <div class="team-member text-center position-relative">
-          <!-- Member Image -->
+          <!-- Developer Image -->
           <div class="member-img mb-4">
             <img src="assets/img/team/member-1.jpg" class="img-fluid rounded-circle" alt="Anandhu Ashok">
           </div>
-          <!-- Member Info -->
+          <!-- Developer Info -->
           <div class="member-info">
             <h4>Anandhu Ashok</h4>
-            <span>Founder & Developer</span>
+            <span>Founder &  Developer</span>
             <!-- Social Media Links -->
-            <div class="social mt-3">
-              <a href="" class="btn btn-outline-dark mx-1"><i class="bi bi-twitter"></i></a>
-              <a href="" class="btn btn-outline-dark mx-1"><i class="bi bi-facebook"></i></a>
-              <a href="" class="btn btn-outline-dark mx-1"><i class="bi bi-instagram"></i></a>
-              <a href="" class="btn btn-outline-dark mx-1"><i class="bi bi-linkedin"></i></a>
-            </div>
+          </div>
+          <div class="social mt-3">
+            <a href="https://instagram.com/mind________freezer" class="btn btn-outline-dark mx-1"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/anandhu-ashok/" class="btn btn-outline-dark mx-1"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
-      </div><!-- End Team Member -->
-
-      <!-- Add More Team Members Here -->
+      </div><!-- End Developer Info -->
 
     </div>
   </div>
@@ -756,6 +705,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="contactme.html">Contact</a></li>
           <li><a href="contact.html">Contribute Your Notes</a></li>
+          <li><a href="resources.html">Search Resources</a></li>
           </ul>
         </div>
 
