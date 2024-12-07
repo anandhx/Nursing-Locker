@@ -263,7 +263,16 @@
             }
           }
           
-          
+          /* For large file warning */
+          .large-file-toast {
+            background-color: #ffc107; /* Yellow for warning */
+          }
+      
+          /* Fade-out Effect (Auto hide after 3 seconds) */
+          @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+          }
   </style>
   </head>
   
@@ -309,6 +318,17 @@
     </div>
   </div>
 
+  <div id="largeFileToast" class="toast large-file-toast">
+    <div class="toast-body">
+      This file is large and can't be scanned for viruses. Would you like to proceed with the download?
+      <br><br>
+      <button onclick="proceedDownload()">Yes, Download</button>
+      <button onclick="cancelDownload()">Cancel</button>
+    </div>
+  </div>
+
+
+
   <div class="container">
     <br>
     <br>
@@ -331,11 +351,7 @@
             <button onclick="handleAction('19toXGpmCtXbuZ8L3L9Ab4aq5ScbcFLpU', 'download')"><i class="fas fa-download"></i> </button>
         </li>
         
-        <li>
-            <span>PV- CHN 1 Part B.pdf</span>
-            <button onclick="handleAction('1cB2U2DJXR39kzovRjrdCmGnUya41vSMY', 'view')"><i class="fas fa-eye"></i> </button>
-            <button onclick="handleAction('1cB2U2DJXR39kzovRjrdCmGnUya41vSMY', 'download')"><i class="fas fa-download"></i> </button>
-        </li>
+  
         
         <li>
             <span>AIDS  or  HIV.pdf</span>
@@ -1578,35 +1594,56 @@
   
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
-    
     <script>
         function handleAction(fileId, action) {
           const baseUrl = 'https://drive.google.com/uc?export=download&id=';
           const viewUrl = 'https://drive.google.com/file/d/' + fileId + '/view';
-          
-          if (action === 'download') {
-            // Show toast notification with fade-in effect
-            const toast = document.getElementById('downloadToast');
-            toast.classList.add('show');
     
-            // Hide toast after 3 seconds (fade-out effect)
-            setTimeout(() => {
-              toast.classList.remove('show');
-            }, 3000);
-    
-            // Redirect for download
-            window.location.href = baseUrl + fileId;
-          } else if (action === 'view') {
-            // Check screen width to decide tab behavior
-            const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-            if (isMobile) {
-              // Mobile: Open in the same tab
-              window.location.href = viewUrl;
-            } else {
-              // Desktop: Open in a new tab
+          // Simulate large file check (for demonstration purposes)
+          // Dynamically get the file ID from the clicked list item
+          const largeFileIds = ['1fwSKYFdRb-B1txoEwRkyQO3s7g1dOVN2'];  // Example IDs for large files
+          if (largeFileIds.includes(fileId)) {
+            showLargeFileToast(fileId);
+          } else {
+            // Normal file download without warning
+            if (action === 'download') {
+              showToast("Download started... Please wait!");
+              window.location.href = baseUrl + fileId;
+            } else if (action === 'view') {
               window.open(viewUrl, '_blank');
             }
           }
+        }
+    
+        function showToast(message) {
+          const toast = document.getElementById('downloadToast');
+          toast.classList.add('show');
+          toast.innerHTML = `<div class="toast-body">${message}</div>`;
+    
+          // Hide toast after 3 seconds
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 3000);
+        }
+    
+        function showLargeFileToast(fileId) {
+          const toast = document.getElementById('largeFileToast');
+          toast.classList.add('show');
+          toast.innerHTML = `<div class="toast-body">This file is large and can't be scanned for viruses. Would you like to proceed with the download?
+            <br><br>
+            <button onclick="proceedDownload('${fileId}')">Yes, Download</button>
+            <button onclick="cancelDownload()">Cancel</button>
+          </div>`;
+        }
+    
+        function proceedDownload(fileId) {
+          const baseUrl = 'https://drive.google.com/uc?export=download&id=';
+          window.location.href = baseUrl + fileId;
+          document.getElementById('largeFileToast').classList.remove('show');
+        }
+    
+        function cancelDownload() {
+          document.getElementById('largeFileToast').classList.remove('show');
         }
     
         function filterResources() {
