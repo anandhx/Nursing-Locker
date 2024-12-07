@@ -224,7 +224,7 @@ h6 {
 .header {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
+  padding: 6px 0;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -1105,7 +1105,7 @@ section,
 # Clients Section
 --------------------------------------------------------------*/
 .clients {
-  padding: 20px 0;
+  padding: 6px 0;
 }
 
 .clients .client-logo {

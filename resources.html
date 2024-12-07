@@ -60,23 +60,12 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
   <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      .container {
-        padding: 20px;
-        max-width: 100%;
-        margin: auto;
-        overflow: hidden;
-      }
+
       
       h2 {
         text-align: center;
         margin-bottom: 20px;
+        color: #333;
       }
       
       .search-bar input {
@@ -97,19 +86,29 @@
       
       .resource-list li {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        padding: 10px;
+        justify-content: space-between;
+        padding: 10px 15px;
         border-bottom: 1px solid #ddd;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        flex-wrap: wrap;
+        background-color: #fff;
+        transition: background-color 0.2s;
+      }
+      
+      .resource-list li:hover {
+        background-color: #f1f1f1;
       }
       
       .resource-list li span {
         flex: 1;
-        word-wrap: break-word; /* Prevents overflow of long words */
+        font-size: 16px;
+        color: #333;
+        word-wrap: break-word;
+        margin-right: 15px;
+      }
+      
+      .resource-list li .icon-buttons {
+        display: flex;
+        gap: 10px;
       }
       
       .resource-list li button {
@@ -117,16 +116,16 @@
         border: none;
         cursor: pointer;
         font-size: 1.2rem;
-        margin-left: 10px;
         color: #007bff;
-        padding: 5px 10px;
+        padding: 5px;
+        text-align: center;
       }
       
       .resource-list li button:hover {
         color: #0056b3;
       }
       
-      .resource-list li i {
+      .resource-list li button i {
         margin-right: 5px;
       }
       
@@ -155,51 +154,82 @@
         text-decoration: underline;
       }
       
-      /* Media Query for Very Small Screens */
+      /* Mobile adjustments */
       @media (max-width: 480px) {
         .resource-list li {
-          flex-direction: column; /* Stack items vertically */
-          align-items: flex-start; /* Align items to the left */
-          padding: 15px 10px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 15px;
         }
       
         .resource-list li span {
-          font-size: 14px; /* Smaller font for mobile */
-          margin-bottom: 10px;
-        }
-      
-        .resource-list li button {
-          width: 100%;
-          margin: 5px 0; /* Make buttons full width with some spacing */
-          text-align: center;
-          padding: 10px;
-        }
-      
-        .search-bar input {
-          font-size: 14px; /* Adjust input field size for mobile */
-          padding: 8px;
-        }
-      }
-      
-      /* Media Query for Tablets and Small Screens */
-      @media (max-width: 768px) {
-        .resource-list li {
-          flex-direction: row;
-          align-items: center;
-        }
-      
-        .resource-list li span {
-          font-size: 16px; /* Slightly larger text for tablets */
-          margin-right: 10px;
-        }
-      
-        .resource-list li button {
-          font-size: 1rem;
-        }
-      }
-      
-      
-      
+            flex: 1; /* Allow file name to take up remaining space */
+            font-size: 16px;
+            word-wrap: break-word; /* Wrap long words onto the next line */
+            overflow: hidden; /* Hide overflowing text */
+            text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+            white-space: nowrap; /* Prevent text wrapping on multiple lines */
+          }
+          
+          .resource-list li {
+            display: flex;
+            justify-content: space-between; /* Keep file name on the left and buttons on the right */
+            align-items: center; /* Center-align the content vertically */
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            transition: background-color 0.2s;
+          }
+          
+          .resource-list li:hover {
+            background-color: #f1f1f1;
+          }
+          
+          .resource-list li .icon-buttons {
+            display: flex;
+            gap: 10px; /* Space between icons */
+          }
+          
+          .resource-list li button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #007bff;
+            padding: 5px;
+            display: flex;
+            align-items: center; /* Center-align icon and text */
+            justify-content: center; /* Center-align within the button */
+            min-width: 36px; /* Ensure consistent size for the button */
+            height: 36px;
+          }
+          
+          .resource-list li button:hover {
+            color: #0056b3;
+          }
+          
+          .resource-list li button i {
+            margin: 0;
+          }
+          
+          @media (max-width: 480px) {
+            .resource-list li {
+              flex-direction: row; /* Keep items in a row */
+              align-items: center;
+            }
+          
+            .resource-list li span {
+              font-size: 14px; /* Slightly smaller text for mobile */
+              white-space: normal; /* Allow wrapping on smaller devices */
+            }
+          
+            .resource-list li .icon-buttons {
+              flex-direction: row; /* Keep icons in a row even on mobile */
+            }
+          }
+          
+          
   </style>
   </head>
   
@@ -1369,9 +1399,30 @@
     </ul>
 
     <div id="noResults" class="no-results" style="display: none;">
-      <i class="fab fa-whatsapp"></i>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <i class="fab fa-whatsapp"></i>
       <p>No resources found. Request to add , contact us via WhatsApp:</p>
       <a href="https://wa.me/7592046959?text=Hello,%20I%20couldn't%20find%20the%20resource%20I%20was%20looking%20for.%20Can%20you%20please%20help?" target="_blank">Message on WhatsApp</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     </div>
   </div>
 
