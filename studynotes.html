@@ -58,7 +58,24 @@
   
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+
     <style>
+      #sub-notes-list {
+        max-height: 400px; /* Adjust this value as needed */
+        overflow-y: auto;  /* Enable vertical scrolling */
+      }
+      
+    </style>
+
+    
+    <style>
+
+      .scrollable-notes {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+
 
         .contribution-card {
             background-color: #f8f9fa; /* Light background */
@@ -73,6 +90,151 @@
             font-weight: 700;
             color: #343a40;
           }
+
+
+
+/* Header */
+h2.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p.text-center {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Note Container */
+#sub-notes-container {
+  margin-top: 30px;
+}
+
+/* List of Notes */
+#sub-notes-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#sub-notes-list li {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+#sub-notes-list li a {
+  margin-top: 10px;
+  align-self: flex-start;
+  text-decoration: none;
+  background-color: #28a745;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 40px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+
+#sub-notes-list li a:hover {
+  background-color: #218838;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 767px) {
+  h2.section-title {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  #sub-notes-list li {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  #sub-notes-list li a {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Button Styles */
+.year-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: -7px 20px;
+  font-size: 1rem;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.year-button:hover {
+  background-color: #0056b3;
+}
+
+.year-button:focus {
+  outline: none;
+}
+
+/* Section for "Toast" Download Notification */
+.toast-body {
+  font-size: 1rem;
+}
+
+/* Toast Notification Styles */
+#downloadToast {
+  min-width: 250px; /* Minimum width of the toast */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+  padding: 10px 15px; /* Padding around the toast */
+  font-size: 14px; /* Smaller text size */
+  line-height: 1.5; /* Better spacing for readability */
+  transition: transform 0.3s ease, opacity 0.3s ease-in-out; /* Smooth transition for showing/hiding */
+}
+
+/* Toast Body Styles (Without Header) */
+#downloadToast .toast-body {
+  font-size: 14px; /* Font size for the body */
+  padding: 8px 15px; /* Padding for body content */
+  text-align: center; /* Center the text */
+}
+
+/* Positioning the Toast */
+.position-fixed {
+  position: fixed;
+  bottom: 20px; /* Adjusted for space from bottom */
+  right: 20px; /* Space from the right edge */
+  z-index: 9999; /* Ensure it is above other content */
+}
+
+/* Animation for Showing the Toast */
+#downloadToast.show {
+  transform: translateY(0); /* Slide up into view */
+  opacity: 1; /* Fully visible */
+}
+
+/* Animation for Hiding the Toast */
+#downloadToast.hide {
+  transform: translateY(100%); /* Slide out of view */
+  opacity: 0; /* Fade out */
+}
+
           
           
     </style>
@@ -113,110 +275,529 @@
   </header>
   
 
+  
+<section id="study-notes" class="study-notes section">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title text-center mb-4">Study Notes</h2>
+    <p class="text-center mb-5">Select your year to access study notes for specific subjects.</p>
 
-  
-    <section id="study-notes" class="study-notes section">
-      <div class="container" data-aos="fade-up">
-        <h2 class="section-title text-center mb-4">Study Notes</h2>
-        <p class="text-center mb-5">Select your year to access study notes for specific subjects.</p>
-  
-        <!-- Year Selector -->
-        <div class="d-flex justify-content-center mb-4">
-          <button class="btn btn-outline-primary mx-2 year-button" onclick="showSubjects('first-year')">First Year</button>
-          <button class="btn btn-outline-primary mx-2 year-button" onclick="showSubjects('second-year')">Second Year</button>
-          <button class="btn btn-outline-primary mx-2 year-button" onclick="showSubjects('third-year')">Third Year</button>
-          <button class="btn btn-outline-primary mx-2 year-button" onclick="showSubjects('fourth-year')">Fourth Year</button>
+    <!-- Year Selector -->
+    <div class="d-flex justify-content-center mb-4">
+      <button class="btn btn-outline-primary mx-2 year-button" onclick="showSubjects('first-year')">First Year</button>
+      <button class="btn btn-outline-primary mx-2 year-button" onclick="showSubjects('second-year')">Second Year</button>
+      <button class="btn btn-outline-primary mx-2 year-button" onclick="showSubjects('third-year')">Third Year</button>
+      <button class="btn btn-outline-primary mx-2 year-button" onclick="showSubjects('fourth-year')">Fourth Year</button>
+    </div>
+
+    <!-- First Year Subjects -->
+    <div id="first-year" class="row gy-4 subject-section d-none">
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('biochemistry-sub-notes')">biochemistry</a>
+          </h4>
+          <p>Notes for biochemistry.</p>
         </div>
-  
-        <!-- Subject Boxes -->
-        <div id="first-year" class="row gy-4 subject-section">
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-book"></i></div>
-              <h4><a href="resources/first-year/anatomy-notes.pdf" download class="stretched-link">Anatomy</a></h4>
-              <p>Comprehensive notes for First-Year Anatomy.</p>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-book"></i></div>
-              <h4><a href="resources/first-year/physiology-notes.pdf" download class="stretched-link">Physiology</a></h4>
-              <p>Detailed notes for First-Year Physiology.</p>
-            </div>
-          </div>
-          <!-- Add more subjects as needed -->
-        </div>
-  
-        <div id="second-year" class="row gy-4 subject-section d-none">
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-book"></i></div>
-              <h4><a href="resources/second-year/pathology-notes.pdf" download class="stretched-link">Pathology</a></h4>
-              <p>Well-structured notes for Second-Year Pathology.</p>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-book"></i></div>
-              <h4><a href="resources/second-year/pharmacology-notes.pdf" download class="stretched-link">Pharmacology</a></h4>
-              <p>Concise notes for Second-Year Pharmacology.</p>
-            </div>
-          </div>
-          <!-- Add more subjects as needed -->
-        </div>
-  
-        <div id="third-year" class="row gy-4 subject-section d-none">
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-book"></i></div>
-              <h4><a href="resources/third-year/community-health-notes.pdf" download class="stretched-link">Community Health</a></h4>
-              <p>Notes for Third-Year Community Health.</p>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-book"></i></div>
-              <h4><a href="resources/third-year/psychiatry-notes.pdf" download class="stretched-link">Psychiatry</a></h4>
-              <p>Insights and notes for Third-Year Psychiatry.</p>
-            </div>
-          </div>
-          <!-- Add more subjects as needed -->
-        </div>
-  
-        <div id="fourth-year" class="row gy-4 subject-section d-none">
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-book"></i></div>
-              <h4><a href="resources/fourth-year/nursing-research-notes.pdf" download class="stretched-link">Nursing Research</a></h4>
-              <p>Critical notes for Fourth-Year Nursing Research.</p>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-book"></i></div>
-              <h4><a href="resources/fourth-year/leadership-management-notes.pdf" download class="stretched-link">Leadership & Management</a></h4>
-              <p>Leadership concepts and management notes.</p>
-            </div>
-          </div>
-          <!-- Add more subjects as needed -->
-        </div>
-  
       </div>
-    </section>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('microbiology-sub-notes')">microbiology</a>
+          </h4>
+          <p>Notes for microbiology.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('nursing-foundation-sub-notes')">nursing foundation</a>
+          </h4>
+          <p>Notes for nursing foundation.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('nutrition-sub-notes')">nutrition</a>
+          </h4>
+          <p>Notes for nutrition.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('psychology-sub-notes')">Psychology</a>
+          </h4>
+          <p>Notes for Psychology.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('anatomy-sub-notes')">anatomy</a>
+          </h4>
+          <p>Notes for anatomy.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Year Subjects -->
+    <div id="second-year" class="row gy-4 subject-section d-none">
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('community-health-nursing-sub-notes')">community health nursing</a>
+          </h4>
+          <p>Notes for community health nursing.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('genetics-sub-notes')">genetics</a>
+          </h4>
+          <p>Notes for genetics.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('medical-surgical-nursing-sub-notes')">medical surgical nursing</a>
+          </h4>
+          <p>Notes for medical surgical nursing.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('pathology-sub-notes')">pathology</a>
+          </h4>
+          <p>Notes for pathology.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('pharmacology-sub-notes')">pharmacology</a>
+          </h4>
+          <p>Notes for pharmacology.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('sociology-sub-notes')">sociology</a>
+          </h4>
+          <p>Notes for sociology.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Year Subjects -->
+    <div id="third-year" class="row gy-4 subject-section d-none">
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('chn-sub-notes')">chn</a>
+          </h4>
+          <p>Notes for chn.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('medical-surgical-nursing-sub-notes')">medical surgical nursing</a>
+          </h4>
+          <p>Notes for medical surgical nursing.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('mental-health-nursing-sub-notes')">mental health nursing</a>
+          </h4>
+          <p>Notes for mental health nursing.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('nursing-research-sub-notes')">nursing research</a>
+          </h4>
+          <p>Notes for nursing research.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fourth Year Subjects -->
+    <div id="fourth-year" class="row gy-4 subject-section d-none">
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('community-health-nursing-sub-notes')">community health nursing</a>
+          </h4>
+          <p>Notes for community health nursing.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('nursing-service-and-education-sub-notes')">nursing service and education</a>
+          </h4>
+          <p>Notes for nursing service and education.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="bi bi-book"></i></div>
+          <h4>
+            <a href="#" class="stretched-link" onclick="showSubNotes('midwifery-sub-notes')">midwifery</a>
+          </h4>
+          <p>Notes for midwifery.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Sub-Notes Section -->
+    <div id="sub-notes-container" class="mt-5">
+      <h4 class="text-center" id="sub-notes-title"></h4>
+      <ul id="sub-notes-list" class="list-unstyled text-center mt-3"></ul>
+    </div>
+
+   <!-- Toast Notification -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="downloadToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+      File is downloading...
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<script>
+  const subNotesData = {
+    'biochemistry-sub-notes': {
+      title: 'biochemistry - Sub Notes',
+      notes: [
+        { name: 'introduction-to-biochemistry.pdf', link: 'https://drive.google.com/uc?export=download&id=1JlErSeu1NhgQMtwU1tYi9zMyZ93JHpCg' },
+        { name: 'unit 2 .pdf', link: 'https://drive.google.com/uc?export=download&id=1N7yLSw0Ja31YeC0Pmbu8cJTOlJ6CQwBw' },
+        { name: 'vitamins-and-minerals.pdf', link: 'https://drive.google.com/uc?export=download&id=1zxzlPK_xvgc8oTPo0KegH5UaO9t7Vx8g' },
+        { name: 'unit-iv-composition-and-metabolism-of-lipids-image.pdf', link: 'https://drive.google.com/uc?export=download&id=1GBSnRACP8NoraMWN-RYBwIBVtZ4xH2Pm' },
+        { name: 'unit-iii-composition-and-metabolism-of-carbohydrates-image .pdf', link: 'https://drive.google.com/uc?export=download&id=1pNLW1Qt5Ce0pf7o1UfLUddbCU0dFwr_5' },
+        { name: 'BCH 313 Metabolism of Amino acids and Proteins.pdf', link: 'https://drive.google.com/uc?export=download&id=1fD1Q9d7FXmJQ8KJZeclGqt8QtRS76lO3' },
+      ],
+    },
+    'microbiology-sub-notes': {
+      title: 'microbiology - Sub Notes',
+      notes: [
+        { name: 'microbiology_1st.pdf', link: 'https://drive.google.com/uc?export=download&id=1jO9TxGF7wmBlBO8c9Ty12MSZyXVJjeCE' },
+        { name: 'UNIT 1.pdf', link: 'https://drive.google.com/uc?export=download&id=1-dJ0Z3UXJn9xv9cU4NjtONUq0dLLhVs1' },
+        { name: 'UNIT 2 .pdf', link: 'https://drive.google.com/uc?export=download&id=1TeqTjP79qMz5S8RsE5nzJ2dzqai6odQR' },
+        { name: 'UNIT 3.pdf', link: 'https://drive.google.com/uc?export=download&id=1wyaEQ-GSfT8Q0-hd46cK0qNVfjC6oJNE' },
+        { name: 'UNIT 5.pdf', link: 'https://drive.google.com/uc?export=download&id=1LEl_RWc5KFXKKQAnG8UgcBFqcgS7BFbl' },
+        { name: 'UNIT 4.pdf', link: 'https://drive.google.com/uc?export=download&id=1Q6GYsbWDi6ARgIlcMVtLrtVnD_U6Hnbb' },
+      ],
+    },
+    'nursing-foundation-sub-notes': {
+      title: 'nursing foundation - Sub Notes',
+      notes: [
+        { name: 'nsgfoundation_1st_19_Part2.pdf', link: 'https://drive.google.com/uc?export=download&id=12e-dakjOkNhBxPDmsaE65KuiXI-in61D' },
+        { name: 'nsgfoundation_1st_19_Part1.pdf', link: 'https://drive.google.com/uc?export=download&id=1tA7vSOsZBbrHsHvEocl6n0th_8HZRXx8' },
+        { name: 'nsgfoundation_1st_19_Part3.pdf', link: 'https://drive.google.com/uc?export=download&id=17va5kw2ZYMnFH9q6fHbgGnos3aV4l_YS' },
+      ],
+    },
+    'nutrition-sub-notes': {
+      title: 'nutrition - Sub Notes',
+      notes: [
+        { name: 'balance.pdf', link: 'https://drive.google.com/uc?export=download&id=1SdFmsHCbsb04piH0c0mLXIl9-E-H8gkU' },
+        { name: 'carbohydrates.pdf', link: 'https://drive.google.com/uc?export=download&id=1oFdlyH1jCPdOv76nka6HypmYN0KLkJSV' },
+        { name: 'cookery-rules-and-preservation-of-.pdf', link: 'https://drive.google.com/uc?export=download&id=15Pyx7MkF6qQCyu7osdUuKkoH1a2By9e1' },
+        { name: 'energy.pdf', link: 'https://drive.google.com/uc?export=download&id=15bAUh40DjWgDQP9eXPfozf9n_mQaxXkT' },
+        { name: 'fats.pdf', link: 'https://drive.google.com/uc?export=download&id=15VK9g3zA5u-sn1Ihj78hV3Q_m7UUCdHw' },
+        { name: 'introduction.pdf', link: 'https://drive.google.com/uc?export=download&id=1WCqqvn2HMXNnVGg_9RhQ7V5qiWJoEdRg' },
+        { name: 'proteins.pdf', link: 'https://drive.google.com/uc?export=download&id=1M-lNakehJ0ci7_uh4989XSwW-aJLmMGJ' },
+        { name: 'water and electrolyte.pdf', link: 'https://drive.google.com/uc?export=download&id=1GhSie-LR1jV9cPoK6qqmruhOU25IBNbn' },
+        { name: 'vitamins.pdf', link: 'https://drive.google.com/uc?export=download&id=1jhTK2Zrb1ekmp2ypVOfHlfaD-mm8cCBt' },
+      ],
+    },
+    'psychology-sub-notes': {
+      title: 'Psychology - Sub Notes',
+      notes: [
+        { name: 'NEW UNIT 7.pdf', link: 'https://drive.google.com/uc?export=download&id=1f3y8bH2Ne0bL_W04hUoY8aIyVi0tP-al' },
+        { name: 'NEW UNIT 5.pdf', link: 'https://drive.google.com/uc?export=download&id=1rIvPTpw9MoHK-DrRGCv0JWKkKCf2FEK-' },
+        { name: 'NEW UNIT 4.pdf', link: 'https://drive.google.com/uc?export=download&id=1BGRB0e8yoraNKBd0Wvm8gU9XjiX2XXzx' },
+        { name: 'NEW UNIT 3.pdf', link: 'https://drive.google.com/uc?export=download&id=1zFOWeQy0lw-FM9qB7Wx-321icY5sCCun' },
+        { name: 'NEW UNIT 2.pdf', link: 'https://drive.google.com/uc?export=download&id=1NFEmGg0As_ntjGyEK3zZZaZRraLhHss1' },
+        { name: 'NEW UNIT 1.pdf', link: 'https://drive.google.com/uc?export=download&id=16pUu02u6F1P6tGd-PiPVo4cRZwPUS6E1' },
+      ],
+    },
+    'anatomy-sub-notes': {
+      title: 'anatomy - Sub Notes',
+      notes: [
+        { name: 'the-reproductive-system.pdf', link: 'https://drive.google.com/uc?export=download&id=1UX_KSb2rSf7AEsqcHTq2LnK-L7N-5uu2' },
+        { name: 'endocrine-nursing.pdf', link: 'https://drive.google.com/uc?export=download&id=1nmpDlt1hDzsTgKHtWIU3YajwCx5ZJX9x' },
+        { name: 'Urinary-system-module-Anatomy.pdf', link: 'https://drive.google.com/uc?export=download&id=18Yhc6DDBCX8wvltbcUCkEqsplzvMphGM' },
+        { name: 'the-digestive-system-anatomy.pdf', link: 'https://drive.google.com/uc?export=download&id=1bE_ftlk16xpElor7yu9bsaR571P_fVZ6' },
+        { name: 'respiratory-system.pdf', link: 'https://drive.google.com/uc?export=download&id=1Tvq0uAREFiZwj7nW1Ac8nbdPihS22bB9' },
+        { name: 'lymphatic system.pdf', link: 'https://drive.google.com/uc?export=download&id=1KiUsOoHfni2dj24_IdQ0WihE9ElpYQPY' },
+        { name: 'circulatory system.PDF', link: 'https://drive.google.com/uc?export=download&id=1NNYuEZ0hHKe5CZcrhOG-2gXaBDIWqv74' },
+        { name: 'sensory-organs.pdf', link: 'https://drive.google.com/uc?export=download&id=1CaO4a1t-tDIV3SlS0wB72nJUugIrhUmA' },
+        { name: 'anatomy-of-the-nervous-system.pdf', link: 'https://drive.google.com/uc?export=download&id=1P-uFQRgh_T5--nFZapT79RblSkwZFaf9' },
+        { name: 'anatomy-of-the-muscular-system.pdf', link: 'https://drive.google.com/uc?export=download&id=1y5oPZkeb-86FXbUcV4QgeW4oxbIiTikQ' },
+        { name: 'anatomy-of-the-skeletal-system.pdf', link: 'https://drive.google.com/uc?export=download&id=1-n3z5iDt8CXwp6PkM_I7e4Ql5_eFveBv' },
+      ],
+    },
+    'community-health-nursing-sub-notes': {
+      title: 'community health nursing - Sub Notes',
+      notes: [
+        { name: 'CHN unit  5 Non communicable diseases.pdf', link: 'https://drive.google.com/uc?export=download&id=1Gax3PPYSpOk17zrThZ_H8fmkjEVE8q2u' },
+        { name: 'CHN Unit 2 Determinants of health.pdf', link: 'https://drive.google.com/uc?export=download&id=1_8_BxFwqiFtHUCBfvp0X2207LbuFmbW4' },
+        { name: 'epidemiology.pdf', link: 'https://drive.google.com/uc?export=download&id=1X2sFQp0legd9k5P7sjPXpVbYSBNjqvEl' },
+        { name: 'CHN Unit 7, population and its control.pdf', link: 'https://drive.google.com/uc?export=download&id=1BUnjuNgvHt9OVeVR2m3TZmKnyd13hx69' },
+        { name: 'CHN unit-7th,Demography .pdf', link: 'https://drive.google.com/uc?export=download&id=1UCoLzATQQf1fUkI_Pj-ilC_711FNuWY2' },
+        { name: 'introduction of chn unit 1.pdf', link: 'https://drive.google.com/uc?export=download&id=1H44gUEjWWucJTGgfcsreaEUSyfwBJon8' },
+      ],
+    },
+    'genetics-sub-notes': {
+      title: 'genetics - Sub Notes',
+      notes: [
+        { name: 'UNIT 5 .pdf', link: 'https://drive.google.com/uc?export=download&id=1e-PaEag23eQVKZBlO-z539t4mePUkvLP' },
+        { name: 'UNIT 4 .pdf', link: 'https://drive.google.com/uc?export=download&id=1ZTbqxZyAFz4QYJNqYx-fZOT5_NejSU6I' },
+        { name: 'UNIT 3 .pdf', link: 'https://drive.google.com/uc?export=download&id=1H2EfJxm1NoNAAiB6a8TLb8aRKDmREMSs' },
+        { name: 'UNIT 2 .pdf', link: 'https://drive.google.com/uc?export=download&id=1LagjSr6taLvR5-n-i5Q9Zze8d5sZ_zlF' },
+        { name: 'UNIT 1 .pdf', link: 'https://drive.google.com/uc?export=download&id=1cXzKXlPeCN0C41fjMaRshNjW_OModQ9N' },
+        { name: 'genetics_2nd_19.pdf', link: 'https://drive.google.com/uc?export=download&id=1jf02Rc-E79Iw9uE74npGRh8ZXX_KvvBa' },
+      ],
+    },
+    'medical-surgical-nursing-sub-notes': {
+      title: 'medical surgical nursing - Sub Notes',
+      notes: [
+        { name: 'Part 3.pdf', link: 'https://drive.google.com/uc?export=download&id=10RUTIy1vgPTT_TEXTwpmj5wZT1U-bbBC' },
+        { name: 'Part 2.pdf', link: 'https://drive.google.com/uc?export=download&id=16egB44EJEK9xQ5Rg9QC7GlRAEAsV7Nkm' },
+        { name: 'Part 1.pdf', link: 'https://drive.google.com/uc?export=download&id=1EPPb-aDsf-U24whtmOgNkJQ_ydIggph-' },
+        { name: 'msn1_Part3_19.pdf', link: 'https://drive.google.com/uc?export=download&id=1d5Ij5JNWv6UOWAiwkvhxhxqJCxhoo-Bu' },
+        { name: 'msn1_Part2_19.pdf', link: 'https://drive.google.com/uc?export=download&id=1S38yeGMi0MUFPeTciq1MKBHaMbxGR4Ya' },
+        { name: 'msn1_Part1_19.pdf', link: 'https://drive.google.com/uc?export=download&id=1iQdYXu_iBMbYfKz4qcXUlS2rRZ9rnS8s' },
+      ],
+    },
+    'pathology-sub-notes': {
+      title: 'pathology - Sub Notes',
+      notes: [
+        { name: 'UNIT 3 .pdf', link: 'https://drive.google.com/uc?export=download&id=1SCIkVwvThXmSsz1m-6AGnAg8oB4-_D3O' },
+        { name: 'UNIT 2 .pdf', link: 'https://drive.google.com/uc?export=download&id=1fhULRThEfsHfSLrPyI_6jO7roVY_MR8T' },
+        { name: 'pathalogy_2nd_19.pdf', link: 'https://drive.google.com/uc?export=download&id=1F9iERFVOGxO6uzPExIQmmWLisvIIdBUp' },
+        { name: 'UNIT 1 .pdf', link: 'https://drive.google.com/uc?export=download&id=1ypSSbYB8siJ-tb1PahTnQQjwAOLaa9yw' },
+      ],
+    },
+    'pharmacology-sub-notes': {
+      title: 'pharmacology - Sub Notes',
+      notes: [
+        { name: 'Pharmacology Part 1.pdf', link: 'https://drive.google.com/uc?export=download&id=1-NwigsF_6eRVQaLtY_on3Di0nhV7jm7t' },
+        { name: 'Pharmacology Part 2.pdf', link: 'https://drive.google.com/uc?export=download&id=1anxgKu3Xamhb-mYAuLlzKYN3S4ncr-6X' },
+      ],
+    },
+    'sociology-sub-notes': {
+      title: 'sociology - Sub Notes',
+      notes: [
+        { name: 'UNIT 12.pdf', link: 'https://drive.google.com/uc?export=download&id=1xYt_ArlTgH4yZLN8kZorvN1M8sJ1d3TF' },
+        { name: 'UNIT 11.pdf', link: 'https://drive.google.com/uc?export=download&id=1FqNbhMWMp5S5xu2HarGaYQ0_QveIJ5Y4' },
+        { name: 'UNIT 10.pdf', link: 'https://drive.google.com/uc?export=download&id=1ODJSqtNjmaOAvm9CLVSGQBjS6ihpX6dC' },
+        { name: 'UNIT 9.pdf', link: 'https://drive.google.com/uc?export=download&id=1gmJsGmOBHvgoFdrwlIgDVVEcp9dvIyh1' },
+        { name: 'UNIT 7.pdf', link: 'https://drive.google.com/uc?export=download&id=1Ui3x3OcLUmXF2S0Z_yEo2WniNNzkIckA' },
+        { name: 'UNIT 6.pdf', link: 'https://drive.google.com/uc?export=download&id=101ukML8skrOc7xdPGSFzX6dKFwn6HHJ3' },
+        { name: 'UNIT 5 .pdf', link: 'https://drive.google.com/uc?export=download&id=1V0JRkWoX0kt6eiGK1eMskcWufxuCmTNd' },
+        { name: 'Pharmacology for Nurses, A Pathophysiological Approach, 4th Edition- Michael Adams ( PDFDrive ).pdf', link: 'https://drive.google.com/uc?export=download&id=14GnR0UVwbL2MJc7LwlzAnbTpf_ZgfiNI' },
+        { name: 'UNIT 4 .pdf', link: 'https://drive.google.com/uc?export=download&id=1GHaJT7MOTdMUP4uPkzz93Wi3PkIRJDPi' },
+        { name: 'UNIT 3 .pdf', link: 'https://drive.google.com/uc?export=download&id=1uem92TbiWdHCKFMVEa5O69UC-llHRm2z' },
+        { name: 'UNIT 1.pdf', link: 'https://drive.google.com/uc?export=download&id=17vPmS2gQScGXcQfVeunBq9rmI-aCJ9i9' },
+        { name: 'SociologyFull.pdf', link: 'https://drive.google.com/uc?export=download&id=1Jfr5jktkTyOVh9m4HlXM1gp9XY1SmdSP' },
+        { name: 'study-guide-for-basic-pharmacology-for-nurses.pdf', link: 'https://drive.google.com/uc?export=download&id=1AjQp4jOr1ELbmrhSDbb0_GYARqq9a5iu' },
+      ],
+    },
+    'chn-sub-notes': {
+      title: 'chn - Sub Notes',
+      notes: [
+        { name: 'CHILD HEALTH NURSING_NursesHub.pdf', link: 'https://drive.google.com/uc?export=download&id=1nzZklirsbwwTrnv8Afybl-6FVgHKHMTO' },
+        { name: '103-child-health-nursing-quick-revision-point.pdf', link: 'https://drive.google.com/uc?export=download&id=1Sh4Tg9P3nJk-WZVsozq4o5OyxdC-JdHG' },
+        { name: 'chn3rd_Part2_19.pdf', link: 'https://drive.google.com/uc?export=download&id=1DYCHIIQm1UWJLdO5esZFLohQh1MTqN_j' },
+      ],
+    },
+    'medical-surgical-nursing-sub-notes': {
+      title: 'medical surgical nursing - Sub Notes',
+      notes: [
+        { name: 'Part 3 .pdf', link: 'https://drive.google.com/uc?export=download&id=1H-MIeOGcR15D_x0R31qbRitfzy7LyKoU' },
+        { name: 'Part 1 .pdf', link: 'https://drive.google.com/uc?export=download&id=1WxF5Twt04RrScwsx6O4vZB-Gnsk0OsBg' },
+        { name: 'Part 2 .pdf', link: 'https://drive.google.com/uc?export=download&id=1d6y3qZAlmPR_2Q7OHKEEPfZeBgNeW9dD' },
+      ],
+    },
+    'mental-health-nursing-sub-notes': {
+      title: 'mental health nursing - Sub Notes',
+      notes: [
+        { name: 'psycsiatric-nursing_Part1.pdf', link: 'https://drive.google.com/uc?export=download&id=144B_h5ROICme_cTmN--CuINWDkr17wD0' },
+        { name: 'psycsiatric-nursing_Part2.pdf', link: 'https://drive.google.com/uc?export=download&id=1bKuCBZgWRmqa7AIGA_RRBckPVvD7OwmF' },
+      ],
+    },
+    'nursing-research-sub-notes': {
+      title: 'nursing research - Sub Notes',
+      notes: [
+        { name: 'UNIT_1.pdf', link: 'https://drive.google.com/uc?export=download&id=1hyRByGXpZ27z9QG1JGmAdGOzqUflvuTt' },
+        { name: 'UNIT_2.pdf', link: 'https://drive.google.com/uc?export=download&id=1GZGWbdjSs6qOv5RPpqbNyEaXb5x2zlRV' },
+        { name: 'UNIT_4.pdf', link: 'https://drive.google.com/uc?export=download&id=1CsU2k5OmK47t0BIHptIcu7kJyTRVOPRY' },
+        { name: 'UNIT_3.pdf', link: 'https://drive.google.com/uc?export=download&id=1M49Fwdwv3PF5xVXc740YeMM2IbD_RPZK' },
+        { name: 'UNIT_6.pdf', link: 'https://drive.google.com/uc?export=download&id=1jC9iW8yCzrJnp92WXlb1psgmftYEYVUQ' },
+      ],
+    },
+    'community-health-nursing-sub-notes': {
+      title: 'community health nursing - Sub Notes',
+      notes: [
+        { name: 'UNIT_1 .pdf', link: 'https://drive.google.com/uc?export=download&id=14lmsSvi9KD-4bQfISGcXovyrYJkJq8Q-' },
+        { name: 'UNIT_6 .pdf', link: 'https://drive.google.com/uc?export=download&id=1nscWjCjvqsNXn7HglQ633Br6U4ReZMMp' },
+        { name: 'UNIT_5.pdf', link: 'https://drive.google.com/uc?export=download&id=1UkQ-_7ddFDMBqk-gMttBq9JSzrbJ9Ub0' },
+        { name: 'UNIT_4 .pdf', link: 'https://drive.google.com/uc?export=download&id=1I2UzUIt0tXoeMTHTOLZhZw_bnWqa2oR9' },
+        { name: 'UNIT_3 .pdf', link: 'https://drive.google.com/uc?export=download&id=1TWYN3YN_smcBQDTe887v-LHuauzS-j_g' },
+        { name: 'UNIT_2.pdf', link: 'https://drive.google.com/uc?export=download&id=1vV8-q4cwbafuqgLBuhkNY9ak7mGZkXZK' },
+      ],
+    },
+    'nursing-service-and-education-sub-notes': {
+      title: 'nursing service and education - Sub Notes',
+      notes: [
+        { name: 'UNIT 7 .pdf', link: 'https://drive.google.com/uc?export=download&id=15QegtfxR0zmROQ5SjP2C53Mo6HQ97z6q' },
+        { name: 'UNIT 8.pdf', link: 'https://drive.google.com/uc?export=download&id=1-1HjKAgRAHR1BT8HtP4FJZ_8zlOhmto2' },
+        { name: 'UNIT 6 .pdf', link: 'https://drive.google.com/uc?export=download&id=1PvHdQDbpM7TUUW152gKE4eWJ9FDPHNJi' },
+        { name: 'unit 3 .pdf', link: 'https://drive.google.com/uc?export=download&id=1NxSxEFkqkuRiCVrT8rsjsbHbQeFEgcba' },
+        { name: 'UNIT 5 .pdf', link: 'https://drive.google.com/uc?export=download&id=1xFzb7x6n-wg1TH8ZGCbhZlyFMXfvNydY' },
+        { name: 'management19.pdf', link: 'https://drive.google.com/uc?export=download&id=1xLLbfljQbuocDWr1DkVDhjmyncwwdgZa' },
+        { name: 'UNIT 2 .pdf', link: 'https://drive.google.com/uc?export=download&id=1dSZvBAf0JkwXTM1idfo8ow9H6bsqvWLp' },
+        { name: 'UNIT 1 .pdf', link: 'https://drive.google.com/uc?export=download&id=1j7xbPuoyx279K1Ens2lb7sPDDL2GaEFR' },
+      ],
+    },
+    'midwifery-sub-notes': {
+      title: 'midwifery - Sub Notes',
+      notes: [
+        { name: 'Midwifery Part 2.pdf', link: 'https://drive.google.com/uc?export=download&id=1f0dKvrOi9AmRsF6fHqViRVOuFTqRnwpv' },
+        { name: 'Midwifery Part 1.pdf', link: 'https://drive.google.com/uc?export=download&id=1sMW1xSP5Cjkg2wJwCiToW2aNAU8KIZoJ' },
+      ],
+    },
+
+  };
+
+  function showSubjects(year) {
+    // Reset scroll position to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   
-    <!-- JavaScript to Toggle Sections -->
-    <script>
-      function showSubjects(year) {
-        // Hide all sections
-        document.querySelectorAll('.subject-section').forEach(section => {
-          section.classList.add('d-none');
-        });
-        // Show selected section
-        document.getElementById(year).classList.remove('d-none');
+    // Hide all subject sections
+    document.querySelectorAll('.subject-section').forEach(section => {
+      section.classList.add('d-none');
+    });
+  
+    // Show the selected year subject section
+    const selectedSection = document.getElementById(year);
+    selectedSection.classList.remove('d-none');
+  
+    // Scroll down by a small fixed amount (e.g., 300px)
+    window.scrollBy({ top: 50, behavior: 'smooth' });
+  
+    // Clear the sub-notes section
+    clearSubNotes();
+  }
+  
+  function smoothScrollTo(target, duration = 3000) {  // Increased duration for slower scroll
+    const start = window.scrollY;
+    const end = target.offsetTop - 100; // Adjust the target offset for better positioning
+    const distance = end - start;
+    const startTime = performance.now();
+  
+    // Bounce easing function (slower bounce)
+    function easeOutBounce(t) {
+      if (t < (1 / 2.75)) {
+        return (7.5625 * t * t);
+      } else if (t < (2 / 2.75)) {
+        return (7.5625 * (t -= (1.5 / 2.75)) * t + 0.75);
+      } else if (t < (2.5 / 2.75)) {
+        return (7.5625 * (t -= (2.25 / 2.75)) * t + 0.9375);
+      } else {
+        return (7.5625 * (t -= (2.625 / 2.75)) * t + 0.984375);
       }
-    </script>
-  </body>
+    }
   
+    // This function will incrementally scroll
+    function scrollStep(timestamp) {
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1); // Ensure progress doesn't exceed 1
+      const bounceProgress = easeOutBounce(progress); // Apply bounce effect
+      window.scrollTo(0, start + distance * bounceProgress);
+  
+      if (progress < 1) {
+        requestAnimationFrame(scrollStep); // Continue scrolling if not done
+      }
+    }
+  
+    requestAnimationFrame(scrollStep); // Start the animation
+  }
+  
+  function showSubNotes(subjectId) {
+    const subNotes = subNotesData[subjectId];
+    if (subNotes) {
+      // Set the sub-notes title
+      document.getElementById('sub-notes-title').textContent = subNotes.title;
+  
+      // Get the sub-notes list element and clear it
+      const subNotesList = document.getElementById('sub-notes-list');
+      subNotesList.innerHTML = '';
+  
+      // Add the notes to the list
+      subNotes.notes.forEach(note => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          ${note.name}
+          <a href="${note.link}" download class="btn btn-sm btn-success mx-1" onclick="showToast()">
+            <i class="bi bi-download"></i> Download
+          </a>
+        `;
+        subNotesList.appendChild(li);
+      });
+  
+      // Get the sub-notes container and scroll down smoothly with bounce effect
+      const subNotesContainer = document.getElementById('sub-notes-container');
+      smoothScrollTo(subNotesContainer, 3000); // Adjusted duration for slower, smoother scroll
+    }
+  }
+  
+  
+  function clearSubNotes() {
+    document.getElementById('sub-notes-title').textContent = '';
+    document.getElementById('sub-notes-list').innerHTML = '';
+  }
+
+  function showToast() {
+    const toastElement = document.getElementById('downloadToast');
+    const toast = new bootstrap.Toast(toastElement);
+    toast.show();
+  }
+</script>
+  
+</body>  
 
 
 
