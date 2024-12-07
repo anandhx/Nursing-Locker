@@ -272,6 +272,10 @@
 
 
   <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
     <h2>Download Nursing Resources</h2>
     <p>Search and select a resource to either view or download:</p>
     
@@ -1536,38 +1540,45 @@
   
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
-    
-  <script>
-    function handleAction(fileId, action) {
-      const baseUrl = 'https://drive.google.com/uc?export=download&id=';
-      const viewUrl = 'https://drive.google.com/file/d/' + fileId + '/view';
-
-      if (action === 'download') {
-        window.location.href = baseUrl + fileId;
-      } else if (action === 'view') {
-        window.open(viewUrl, '_blank');
-      }
-    }
-
-    function filterResources() {
-      const searchInput = document.getElementById('searchInput').value.toLowerCase();
-      const resources = document.querySelectorAll('#resourceList li');
-      let hasResults = false;
-
-      resources.forEach((resource) => {
-        const text = resource.querySelector('span').textContent.toLowerCase();
-        if (text.includes(searchInput)) {
-          resource.style.display = '';
-          hasResults = true;
-        } else {
-          resource.style.display = 'none';
+    <script>
+        function handleAction(fileId, action) {
+          const baseUrl = 'https://drive.google.com/uc?export=download&id=';
+          const viewUrl = 'https://drive.google.com/file/d/' + fileId + '/view';
+      
+          if (action === 'download') {
+            // Redirect for download
+            window.location.href = baseUrl + fileId;
+          } else if (action === 'view') {
+            // Check screen width to decide tab behavior
+            if (window.innerWidth <= 768) {
+              // Mobile: Open in the same tab
+              window.location.href = viewUrl;
+            } else {
+              // Desktop: Open in a new tab
+              window.open(viewUrl, '_blank');
+            }
+          }
         }
-      });
-
-      document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
-    }
-  </script>
-  
+      
+        function filterResources() {
+          const searchInput = document.getElementById('searchInput').value.toLowerCase();
+          const resources = document.querySelectorAll('#resourceList li');
+          let hasResults = false;
+      
+          resources.forEach((resource) => {
+            const text = resource.querySelector('span').textContent.toLowerCase();
+            if (text.includes(searchInput)) {
+              resource.style.display = '';
+              hasResults = true;
+            } else {
+              resource.style.display = 'none';
+            }
+          });
+      
+          document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+        }
+      </script>
+      
   </body>
   
   </html>
