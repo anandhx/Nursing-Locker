@@ -69,7 +69,7 @@
       
       .container {
         padding: 20px;
-        max-width: 100%; /* Ensure full width for mobile devices */
+        max-width: 100%;
         margin: auto;
         overflow: hidden;
       }
@@ -86,6 +86,7 @@
         font-size: 16px;
         border: 1px solid #ccc;
         border-radius: 4px;
+        box-sizing: border-box;
       }
       
       .resource-list {
@@ -103,7 +104,7 @@
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        flex-wrap: wrap; /* Allows items to wrap in small screens */
+        flex-wrap: wrap;
       }
       
       .resource-list li span {
@@ -118,6 +119,7 @@
         font-size: 1.2rem;
         margin-left: 10px;
         color: #007bff;
+        padding: 5px 10px;
       }
       
       .resource-list li button:hover {
@@ -153,28 +155,49 @@
         text-decoration: underline;
       }
       
-      /* Media Query for Smaller Screens */
-      @media (max-width: 600px) {
+      /* Media Query for Very Small Screens */
+      @media (max-width: 480px) {
         .resource-list li {
-          flex-direction: column; /* Stack the items vertically */
-          align-items: flex-start;
+          flex-direction: column; /* Stack items vertically */
+          align-items: flex-start; /* Align items to the left */
+          padding: 15px 10px;
         }
       
         .resource-list li span {
-          font-size: 14px; /* Make text smaller */
+          font-size: 14px; /* Smaller font for mobile */
           margin-bottom: 10px;
         }
       
         .resource-list li button {
           width: 100%;
-          margin: 5px 0; /* Stack buttons vertically with some spacing */
+          margin: 5px 0; /* Make buttons full width with some spacing */
           text-align: center;
+          padding: 10px;
         }
       
         .search-bar input {
           font-size: 14px; /* Adjust input field size for mobile */
+          padding: 8px;
         }
       }
+      
+      /* Media Query for Tablets and Small Screens */
+      @media (max-width: 768px) {
+        .resource-list li {
+          flex-direction: row;
+          align-items: center;
+        }
+      
+        .resource-list li span {
+          font-size: 16px; /* Slightly larger text for tablets */
+          margin-right: 10px;
+        }
+      
+        .resource-list li button {
+          font-size: 1rem;
+        }
+      }
+      
       
       
   </style>
