@@ -1,0 +1,52 @@
+   <li>
+            <span>2 marks pathology.pdf</span>
+            <button onclick="handleAction('1-P77MLdAnb1IA6d4J0dxpy5aFqp5OTZY', 'view')"><i class="fas fa-eye"></i> </button>
+            <button onclick="handleAction('1-P77MLdAnb1IA6d4J0dxpy5aFqp5OTZY', 'download')"><i class="fas fa-download"></i> </button>
+        </li>
+
+
+
+ <li>
+            <span>pathology 10 marks.pdf</span>
+            <button onclick="handleAction('1W5FSeVYiRssfaP8IoLak-1iIaueP2tiw', 'view')"><i class="fas fa-eye"></i> </button>
+            <button onclick="handleAction('1W5FSeVYiRssfaP8IoLak-1iIaueP2tiw', 'download')"><i class="fas fa-download"></i> </button>
+        </li>
+        
+        <li>
+            <span>Pharmacology 2 Marks.pdf</span>
+            <button onclick="handleAction('1m0IuzL55NFEoq8ZywLyn3jMukDutjH5r', 'view')"><i class="fas fa-eye"></i> </button>
+            <button onclick="handleAction('1m0IuzL55NFEoq8ZywLyn3jMukDutjH5r', 'download')"><i class="fas fa-download"></i> </button>
+        </li>
+        
+        <li>
+            <span>Pharmacology 5 Marks.pdf</span>
+            <button onclick="handleAction('12AVR0h6-7TR5CB08_D50Cnrk3dmt_VBM', 'view')"><i class="fas fa-eye"></i> </button>
+            <button onclick="handleAction('12AVR0h6-7TR5CB08_D50Cnrk3dmt_VBM', 'download')"><i class="fas fa-download"></i> </button>
+        </li>
+        
+
+
+ <li>
+            <span>pathology 5 Marks.pdf</span>
+            <button onclick="handleAction('1Otb8rQp5xwKDm30-u92F5aO_VWK-BPKc', 'view')"><i class="fas fa-eye"></i> </button>
+            <button onclick="handleAction('1Otb8rQp5xwKDm30-u92F5aO_VWK-BPKc', 'download')"><i class="fas fa-download"></i> </button>
+        </li>
+        
+        <li>
+            <span>pathology 10 marks.file.pdf</span>
+            <button onclick="handleAction('1lhIdXLffdCd4ILtYD-ogFHRQc9QdDy4U', 'view')"><i class="fas fa-eye"></i> </button>
+            <button onclick="handleAction('1lhIdXLffdCd4ILtYD-ogFHRQc9QdDy4U', 'download')"><i class="fas fa-download"></i> </button>
+        </li>
+        
+        <li>
+            <span>pathology 5 marks questions.pdf</span>
+            <button onclick="handleAction('1OuPRItK3Qs65iWnT1_Um3KAYTf4XSd4k', 'view')"><i class="fas fa-eye"></i> </button>
+            <button onclick="handleAction('1OuPRItK3Qs65iWnT1_Um3KAYTf4XSd4k', 'download')"><i class="fas fa-download"></i> </button>
+        </li>
+        
+        <li>
+            <span>pathology 5 marks questions.pdf</span>
+            <button onclick="handleAction('1sDcmi-_0DDpYAVP_CW6_rqSGejFAWM18', 'view')"><i class="fas fa-eye"></i> </button>
+            <button onclick="handleAction('1sDcmi-_0DDpYAVP_CW6_rqSGejFAWM18', 'download')"><i class="fas fa-download"></i> </button>
+        </li>
+        
